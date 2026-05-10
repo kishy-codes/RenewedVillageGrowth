@@ -1,5 +1,8 @@
 *** Renewed Village Growth bigy-fork GS Changelog ***
 
+Version 12.3 (2026/05/10)
+- mod: Double max towns from 2000 to 4000
+
 Version 12.2 (2026/05/01)
 - new: AXIS 2.3.x Extreme Classic (bigyihsuan)
 - new: FIRS Forked: Oil Town (bigyihsuan)
