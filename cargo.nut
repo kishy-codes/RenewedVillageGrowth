@@ -223,20 +223,21 @@ function GetEconomyCargoList(economy, cargo_list) {
         return ["ACID","GRVL","ALUM","CBLK","CSTI","CMNT","FOOD","CHLO","SOAP","COAL",
                 "CTAR","COKE","CCPR","POWR","ENSP","FMSP","FEAL","FOCA","GLAS","GOOD",
                 "HWAR","IORE","LIME","LYE_","MAIL","N7__","O2__","COAT","PASS","IRON",
-                "POTA","PPWK","PUMP","QLME","RBAR","RUBR","SALT","SAND","SCMT","SEAL",
-                "SLAG","SASH","STBL","STIG","STBR","STPP","STSE","STSH","STSL","STTB",
-                "STWR","SULP","TYCO","TYRE","VEHI","VBOD","VENG","VPTS","WELD","ZINC"];
+                "POTA","PPWK","PLNT","PUMP","QLME","RBAR","RUBR","SALT","SAND","SCMT",
+                "SEAL","SLAG","SASH","STBL","STIG","STBR","STPP","STPL","STSH","STSL",
+                "STTB","STWR","STSW","SULP","TYCO","TYRE","VEHI","VBOD","VENG","VPTS",
+                "WELD","ZINC"];
     case(Economies.FIRS5__TEMPERATE_BASIC): // Temperate Basic
-        return ["BEER","RFPR","COAL","ENSP","FMSP","FISH","FRUT","GOOD","IORE","FOOD",
+        return ["BEER","CHEM","COAL","ENSP","FMSP","FISH","FRUT","GOOD","IORE","FOOD",
                 "KAOL","LVST","MAIL","MILK","PASS","SAND","SCMT","STEL"];
     case(Economies.FIRS5__ARCTIC_BASIC): // Arctic Basic
         return ["NH3_","ENSP","BOOM","FMSP","FERT","FISH","FOOD","KAOL","WOOD","MAIL",
                 "PAPR","PASS","PEAT","PHOS","POTA","PORE","SULP","WDPR","ZINC"];
     case(Economies.FIRS5__TROPIC_BASIC): // Tropic Basic
-        return ["BEER","BEAN","RFPR","JAVA","COPR","CORE","ENSP","FMSP","FISH","FOOD",
+        return ["BEER","BEAN","CHEM","JAVA","COPR","CORE","ENSP","FMSP","FISH","FOOD",
                 "FRUT","GOOD","GRAI","LVST","MAIL","NITR","OIL_","PASS","WOOL"];
     case(Economies.FIRS5__IN_A_HOT_COUNTRY): // In A Hot Country
-        return ["GRVL","BEER","BDMT","CASS","RFPR","CLAY","JAVA","COPR","CORE","DIAM",
+        return ["GRVL","BEER","BDMT","CASS","CHEM","CLAY","JAVA","COPR","CORE","DIAM",
                 "EOIL","ENSP","FMSP","FOOD","FRUT","GOOD","LVST","WOOD","MAIL","MAIZ",
                 "MNO2","NUTS","OIL_","PASS","PETR","PHOS","RUBR","SAND","WDPR"];
     case(Economies.XIS__THE_LOT): // XIS 0.6: The Lot
