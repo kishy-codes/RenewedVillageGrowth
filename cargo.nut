@@ -56,17 +56,20 @@ enum Economies
     FIRS5__TROPIC_BASIC, // 5.0.0
     FIRS5__STEELTOWN, // 5.0.0
     FIRS5__IN_A_HOT_COUNTRY, // 5.0.0
+    FIRS_FORKED__OILTOWN, // 5.2.0.3
     XIS__THE_LOT, // 0.6
     AXIS__STEELTOWN, // 2.2.0
     AXIS__TROPICAL_PARADISE, // 2.2.0
+    AXIS__EXTREME_CLASSIC, // 2.3.0
     OTIS, // 05
     IOTC, // 0.1.4
     LUMBERJACK, // 0.1.0
     WRBI, // 1200
-    ITI2, // 2.14
+    ITI2, // 2.17
     REAL, // Real Industries Beta
     MINIMALIST, // 1.1
     PIRS, // PIRS 2022
+    DEFAULTINDPLUS__TEMPERATE, // DefaultIndustriesPlus Temperate
     END,
 }
 
@@ -223,22 +226,27 @@ function GetEconomyCargoList(economy, cargo_list) {
         return ["ACID","GRVL","ALUM","CBLK","CSTI","CMNT","FOOD","CHLO","SOAP","COAL",
                 "CTAR","COKE","CCPR","POWR","ENSP","FMSP","FEAL","FOCA","GLAS","GOOD",
                 "HWAR","IORE","LIME","LYE_","MAIL","N7__","O2__","COAT","PASS","IRON",
-                "POTA","PPWK","PUMP","QLME","RBAR","RUBR","SALT","SAND","SCMT","SEAL",
-                "SLAG","SASH","STBL","STIG","STBR","STPP","STSE","STSH","STSL","STTB",
-                "STWR","SULP","TYCO","TYRE","VEHI","VBOD","VENG","VPTS","WELD","ZINC"];
+                "POTA","PPWK","PLNT","PUMP","QLME","RBAR","RUBR","SALT","SAND","SCMT",
+                "SEAL","SLAG","SASH","STBL","STIG","STBR","STPP","STPL","STSH","STSL",
+                "STTB","STWR","STSW","SULP","TYCO","TYRE","VEHI","VBOD","VENG","VPTS",
+                "WELD","ZINC"];
     case(Economies.FIRS5__TEMPERATE_BASIC): // Temperate Basic
-        return ["BEER","RFPR","COAL","ENSP","FMSP","FISH","FRUT","GOOD","IORE","FOOD",
+        return ["BEER","CHEM","COAL","ENSP","FMSP","FISH","FRUT","GOOD","IORE","FOOD",
                 "KAOL","LVST","MAIL","MILK","PASS","SAND","SCMT","STEL"];
     case(Economies.FIRS5__ARCTIC_BASIC): // Arctic Basic
         return ["NH3_","ENSP","BOOM","FMSP","FERT","FISH","FOOD","KAOL","WOOD","MAIL",
                 "PAPR","PASS","PEAT","PHOS","POTA","PORE","SULP","WDPR","ZINC"];
     case(Economies.FIRS5__TROPIC_BASIC): // Tropic Basic
-        return ["BEER","BEAN","RFPR","JAVA","COPR","CORE","ENSP","FMSP","FISH","FOOD",
+        return ["BEER","BEAN","CHEM","JAVA","COPR","CORE","ENSP","FMSP","FISH","FOOD",
                 "FRUT","GOOD","GRAI","LVST","MAIL","NITR","OIL_","PASS","WOOL"];
     case(Economies.FIRS5__IN_A_HOT_COUNTRY): // In A Hot Country
-        return ["GRVL","BEER","BDMT","CASS","RFPR","CLAY","JAVA","COPR","CORE","DIAM",
+        return ["GRVL","BEER","BDMT","CASS","CHEM","CLAY","JAVA","COPR","CORE","DIAM",
                 "EOIL","ENSP","FMSP","FOOD","FRUT","GOOD","LVST","WOOD","MAIL","MAIZ",
                 "MNO2","NUTS","OIL_","PASS","PETR","PHOS","RUBR","SAND","WDPR"];
+    case(Economies.FIRS_FORKED__OILTOWN):
+        return ["BITU","CHEM","COAL","CTAR","COKE","COND","ENSP","ETHY","FERT","FOOD",
+                "FFLD","HOIL","LOIL","LNG_","LPG_","LUBR","MAIL","NAPH","OIL_","PASS",
+                "PETR","PLAS","NGAS","RGAS","SULP","WATR"];
     case(Economies.XIS__THE_LOT): // XIS 0.6: The Lot
         return ["PASS","ACID","MAIL","BEER","AORE","GOOD","BEAN","BDMT","CMNT","RFPR",
                 "CHLO","FOOD","CLAY","COAL","COKE","COPR","CORE","EOIL","POWR","ENSP",
@@ -263,6 +271,14 @@ function GetEconomyCargoList(economy, cargo_list) {
                 "PHAC","IRON","FICR","PLAS","QLME","RAMT","RCYC","RUBR","SALT","SAND",
                 "SCMT","SLAG","SASH","STEL","STSE","SGCN","SUGR","SULP","SUAC","TEXT",
                 "WDPR","TYRE","VPTS","VEHI"];
+    case (Economies.AXIS__EXTREME_CLASSIC): //AXIS 2.3.0 Extreme Classic
+        return ["PASS","ACID","MAIL","BEER","ALUM","GOOD","AORE","BIOM","BDMT","CMNT",
+                "RFPR","FOOD","CHLO","CLAY","COAL","CTAR","COKE","COPR","CORE","EOIL",
+                "POWR","ENSP","BOOM","FMSP","FERT","FISH","FRUT","GLAS","GRAI","IORE",
+                "LIME","LVST","WOOD","MPAR","MILK","NITR","OIL_","OLSD","MNSP","COAT",
+                "PAPR","PETR","IRON","FICR","PLAS","PORE","QLME","RAMT","RCYC","RUBR",
+                "SALT","SAND","SCMT","SLAG","SASH","STEL","SGBT","SULP","TEXT","TYRE",
+                "WDPR","VPTS","VEHI","ZINC"];
     case(Economies.OTIS): // OTIS 05
         local list = ["PASS","COAL","MAIL","OIL_","LIME","GOOD","GRAI","WOOD","IORE","STEL",
                       "MILK","FOOD","PAPR","FISH","WOOL","CLAY","SAND","WDPR","PCL_","GRVL",
@@ -295,8 +311,8 @@ function GetEconomyCargoList(economy, cargo_list) {
         if (30 < cargo_list.len() && cargo_list[30] == "WSTE")
             list.append("WSTE");
         return list;
-    case(Economies.ITI2): // Improved Town Industries 2.14
-        return ["PASS","COAL","MAIL","OIL_","WDPR","GOOD","RFPR","WOOD","IORE","STEL","PAPR",
+    case(Economies.ITI2): // Improved Town Industries 2.17
+        return ["PASS","COAL","MAIL","OIL_","WDPR","GOOD","CHEM","WOOD","IORE","STEL","PAPR",
                 "PLAS","FOOD","BDMT","VALU","LVST","WDCH","SCMT","SCPR","GRAI","WSTE"];
 
     case(Economies.REAL): // Real Industries Beta
@@ -310,6 +326,11 @@ function GetEconomyCargoList(economy, cargo_list) {
     case(Economies.PIRS): // PIRS 2022
         return ["PASS","COAL","MAIL","OIL_","FISH","GOOD","GRAI","WOOD","IORE","STEL","WDPR",
                 "FOOD","FRUT","ENSP","FMSP","RFPR","PETR"];
+
+    case(Economies.DEFAULTINDPLUS__TEMPERATE): // DefaultIndustriesPlus Temperate
+        return ["PASS", "COAL", "MAIL", "OIL_", "LVST", "GOOD", "GRAI", "WOOD", "IORE",
+                "STEL", "VALU", null, null, null, null, null, null, null, null, null,
+                null, null, "LMBR", "LUBR", "PETR"];
     default:
         return [];
     }
@@ -928,6 +949,21 @@ function DefineCargosBySettings(economy)
             ::CargoPermille <- [60,25,25,15,10];
             ::CargoDecay <- [0.4,0.2,0.2,0.1,0.1];
             break;
+        case(Economies.FIRS_FORKED__OILTOWN): // FIRS Forked: Oil Town
+            ::CargoLimiter <- [19, 16];
+            ::CargoCat <- [
+                [19,16], // public services
+                [2,5,9,18,22,25], // raw and food
+                [3,4,11,12,13,14,17,23,24], // processed mats
+                [0,1,7,10,15,21], // refined mats
+                [6,8,20] // products
+            ];
+            ::CargoCatList <- [CatLabels.PUBLIC_SERVICES,CatLabels.RAW_AND_FOOD,CatLabels.PROCESSED_MATERIALS,
+                            CatLabels.REFINED_MATS, CatLabels.PRODUCTS];
+            ::CargoMinPopDemand <- [0,500,1000,4000,8000];
+            ::CargoPermille <- [60,25,25,15,10];
+            ::CargoDecay <- [0.4,0.2,0.2,0.1,0.1];
+            break;
         case(Economies.XIS__THE_LOT): // XIS 0.6: The Lot
             ::CargoLimiter <- [0,2];
             ::CargoCat <- [[0,2],
@@ -979,6 +1015,32 @@ function DefineCargosBySettings(economy)
                     CatLabels.MANUFACTORING_COMPS, CatLabels.FINAL_AND_VEHICLES ];
 
             local cat_6 = [3, 11, 21, 22, 23, 24, 26, 29, 31, 32, 55, 56]; // "Raw food"
+            if (::SettingsTable.cargo_6_category) {
+                ::CargoCatList[1] = CatLabels.RAW_MATERIALS;
+                ::CargoCat.insert(1, cat_6);
+                ::CargoCatList.insert(1, CatLabels.RAW_FOOD);
+                ::CargoMinPopDemand <- [0, 500, 1000, 4000, 8000, 12000];
+                ::CargoPermille <- [60, 20, 20, 15, 15, 10];
+                ::CargoDecay <- [0.4, 0.2, 0.2, 0.15, 0.15, 0.1];
+            } else {
+                ::CargoCat[1].extend(cat_6);
+                ::CargoMinPopDemand <- [0, 500, 1000, 4000, 8000];
+                ::CargoPermille <- [60, 25, 25, 15, 10];
+                ::CargoDecay <- [0.4, 0.2, 0.2, 0.1, 0.1];
+            }
+            break;
+        case(Economies.AXIS__EXTREME_CLASSIC): // AXIS 2.3.0: Extreme Classic
+            ::CargoLimiter <- [0,2];
+            ::CargoCat <- [[0,2],
+                    [6,7,13,14,15,18,29,30,32,35,36,37,43,45,48,49,51,52,54], // raw materials
+                    [1,4,9,10,12,16,17,27,42,46,47,53,55,57,60,63], // refined materials
+                    [20,22,24,33,38,39,40,44,58,59,61], // manufacturing components
+                    [5,8,21,23,41,62] // finished goods
+                ];
+            ::CargoCatList <- [CatLabels.PUBLIC_SERVICES,CatLabels.RAW_AND_FOOD,CatLabels.REFINED_MATS,
+                    CatLabels.MANUFACTORING_COMPS, CatLabels.FINAL_PRODUCTS];
+
+            local cat_6 = [3,11,19,25,26,28,31,34,50,56]; // food
             if (::SettingsTable.cargo_6_category) {
                 ::CargoCatList[1] = CatLabels.RAW_MATERIALS;
                 ::CargoCat.insert(1, cat_6);
@@ -1084,6 +1146,17 @@ function DefineCargosBySettings(economy)
             ::CargoCatList <- [CatLabels.PUBLIC_SERVICES,CatLabels.RAW_MATERIALS,CatLabels.PROCESSED_MATERIALS,CatLabels.FINAL_PRODUCTS];
             ::CargoMinPopDemand <- [0,500,1500,4000];
             ::CargoPermille <- [60,35,25,15];
+            ::CargoDecay <- [0.4,0.3,0.2,0.1];
+            break;
+        case(Economies.DEFAULTINDPLUS__TEMPERATE): // DefaultIndustriesPlus Temperate
+            ::CargoLimiter <- [0,2];
+            ::CargoCat <- [[0,2],
+                       [1,3,4,6,7,8],
+                       [9,22,23,24],
+                       [5,10]];
+            ::CargoCatList <- [CatLabels.PUBLIC_SERVICES,CatLabels.RAW_MATERIALS,CatLabels.PROCESSED_MATERIALS,CatLabels.FINAL_PRODUCTS];
+            ::CargoMinPopDemand <- [0,500,1500,4000];
+            ::CargoPermille <- [60,40,25,15];
             ::CargoDecay <- [0.4,0.3,0.2,0.1];
             break;
         default:
