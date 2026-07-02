@@ -15,7 +15,7 @@ class MainClass extends GSInfo
     {
     function GetAuthor()                { return "kishy"; }
     function GetName()                  { return "Renewed Village Growth kishy-fork"; }
-    function GetShortName()             { return "RVG-K"; }
+    function GetShortName()             { return "RVGK"; }
     function GetDescription()           { return "Towns require various cargo deliveries to grow. Required cargos can be randomized. Town growth is limited by percentage of transported specific cargos. Supporting most Industry NewGRF sets."; }
     function GetURL()                   { return "https://www.tt-forums.net/viewtopic.php?f=65&t=87052"; }
     function GetVersion()               { return SELF_VERSION; }
